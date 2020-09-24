@@ -2,6 +2,7 @@
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
+\usepackage{algorithm}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -74,7 +75,7 @@ Majority of the problems faced in any aspect of computer science, in one way or 
 
 \subsection{Computing Methodologies}
 
-Most form of computational algorithms in the present day, are executed on a conventional computer. The fundamental notation used for differentiating classicial computing (CC) and QC is the basic unit of information. While classical computers use bits 0 and 1, quantum computers use "one of" two computational basis states. The label awarded to these states is "bra-ket" notation i.e, state $\ket{0}$ or $\ket{1}$. Bits are assigned states 0 or 1 deterministically and independently. However, qbits can exist in a superposition state of $\alpha\textsubscript{0}$$\ket{0}$ + $\alpha\textsubscript{1}$$\ket{1}$, where $\alpha{0}$ and $\alpha{1}$ are complex numbers, such that $|\alpha\textsubscript{0}|\textsuperscript{2}$ + $|\alpha\textsubscript{1}|\textsuperscript{2}$ = 1.
+Most form of computational algorithms in the present day, are executed on a conventional computer. The fundamental notation used for differentiating Classical Computing (CC) and QC is the basic unit of information. While classical computers use bits 0 and 1, quantum computers use "one of" two computational basis states. The label awarded to these states is "bra-ket" notation i.e, state $\ket{0}$ or $\ket{1}$. Bits are assigned states 0 or 1 deterministically and independently. However, qbuits can exist in a superposition state of $\alpha\textsubscript{0}$$\ket{0}$ + $\alpha\textsubscript{1}$$\ket{1}$, where $\alpha{0}$ and $\alpha{1}$ are complex numbers, such that $|\alpha\textsubscript{0}|\textsuperscript{2}$ + $|\alpha\textsubscript{1}|\textsuperscript{2}$ = 1.
 
 \subsection{Why go Quantum?}
 
@@ -89,7 +90,7 @@ According to Moore's Law, the size of computational units shrinks at an exponent
 
 Evolutionary Algorithms (EA) encompass a wide array of research ideas stemming from general principles of genetics and the theory of evolution. Models are developed to illustrate the behaviour of naturally occuring phenomena, develop these algorithms and test out the application of the corresponding theory. The general process of any EA is depicted in figure \ref{p1}. In a nutshell, an initial population of candidate solutions is generated and each solution is labelled according to their performance on a set fitness function. Further down the line, these candidates are improved upon by conducting a set of operations on them for a predetermined number of generations. After some stopping criterias are achieved, the process strops and the best candidate is hypothesized as the global solution. The advantages offered by this technqiue include but not limited to resilience to noise, in-built support for parallelism and distributed learning, multi-pronged attack and handling complex problems. 
 
-\begin{figure}[!b]
+\begin{figure}[!t]
 \centering\includegraphics[height=6.75cm]{p1.png}
 \caption{General Flow of Evolutionary Algorithms}
 \label{p1}
@@ -97,6 +98,127 @@ Evolutionary Algorithms (EA) encompass a wide array of research ideas stemming f
 
 Our paper provides an insight into the ensemble of both the previously mentioned techniques and preparing algorithms for a future where quantum computers replace traditional computers as commonplace machines. 
 
+\section{Methodology}
+
+One of the most famous quantum effect invovles "superposition", which allows a quantum entity to exist simultaneously. As a result memory conservation capabilities of any quantum system increases exponentially. Coupling this idea with multiple evolutionary aspects, we present a novel computational frontier. 
+
+\subsection{Existing Convention}
+
+Consider the following problem; Assume the position of a process $\textit{P}$ in a finite state system of $\textit{n}$ states at time $\textit{t}$ to be $\textit{x\textsubscript{i}}$. Create a general procedure to reach position $\textit{x\textsubscript{j}}$ at time $\textit{t+1}$.
+
+The conventional process would involve declaration of a register of size $\textit{n}$ and listing out all possible combinations for reaching state $\textit{x\textsubscript{j}}$ along with the costs. This would be followed by creation of a logical circutry of gates mapping the input state to the output state using boolean primitives. The entire process could still be automated using certain advanced algorithms. However, the memory utilization will not be optimal as all possible state transitions must be considered before building the circuit. Figure $\ref{p2}$ displays the state table, state diagram and accompanying circuit diagram for a D flip flop. Notice that all possible states for the input have been mentioned in the state table. This constitues a huge waste of memory as majority of the inputs are never encountered and some states could be invalid. QC aims to reduce this inefficiency between making all the states dependent on each other. 
+
+\begin{figure}[!b]
+\centering\includegraphics[width=8cm]{ss.jpg}
+\caption{States for D flip flop}
+\label{p2}
+\end{figure}
+
+\subsection{Applied Quantum Mechanics}
+Classicial state transitions cannot fathom superposition and hence will always be fixated on one fixed state. For the D flip flop example, the number of inputs are two and hence the number of output states is $2\textsuperscript{2}$ for each starting state. The 4 possible states can be represented as an one-hot encoded vector with each bit representing the state of the output. For example, the vector shown below represents state 00 for an input state of 0.
+$$
+\begin{bmatrix} 
+1&0&0&0\\
+\end{bmatrix}
+\quad
+$$
+
+Quantum Mechanics is a generalized extension of classical method. The first generalization comes in the form of the temporal values of the elements of the matrix. In QC qubits are utilized instead of bits and as a result the state vectors are variables. Instead of 0 and 1, state vector can be constituted of complex numbers which meet the condition of unitarity. For any matrix $\textit{M}$ to be an unitarity matrix, the only necessary condition is shown in Equation $\ref{eq:1}$ where $M\textsuperscript{$\dagger$}$ is the Hermitean adjoint of $\textit{M}$ and $\textit{I}$ is the identity matrix. 
+
+\begin{equation}
+\label{eq:1}
+M\textsuperscript{$\dagger$}M = MM\textsuperscript{$\dagger$} = I
+\end{equation}
+
+To facilitate the design of circuitry of state diagrams, QC introduces a set of gates to utilize the power of quantum mechanics. The noteworthy ones are mentioned below:
+
+\begin{itemize}
+\item QNOT: This gate is the quantum extension of the controlled NOT gate in CC. A controlled NOT gate performs the inversion operation on the right-most bit of a vector iff the left-most bit is 1. A 1-bit QNOT gate is depicted as follows:
+$$
+\begin{bmatrix} 
+0&1\\
+1&0\\
+\end{bmatrix}
+\quad
+$$
+\item SRN: The application of Square Root of NOT puts a qubit into a state of equal superposition through controlled randomization based on the qubit's past state. A 1-bit SRN is shown below:
+$$
+\begin{bmatrix} 
+\frac{1}{\sqrt{2}}&\frac{-1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
+\end{bmatrix}
+\quad
+$$
+\item Swap: As the name suggests, this gate is used to swap the states of two qubits and is represented as:
+$$
+\begin{bmatrix} 
+{1}&{0}&{0}&{0}\\
+{0}&{0}&{1}&{0}\\
+{0}&{1}&{0}&{0}\\
+{0}&{0}&{0}&{1}\\
+\end{bmatrix}
+\quad
+$$
+\item Parameterized Rotation: This is a family of 1-qubit rotations parameterized by angle $\theta$ and is given by:
+$$
+\begin{bmatrix} 
+cos(\theta)&sin(\theta)\\
+-sin(\theta)&cos(\theta)\\
+\end{bmatrix}
+\quad
+$$
+\end{itemize}
+
+\subsection{Applied Evolutionary Operators}
+
+EA have been used extensively for complex optimization problems due to quality results even with a lack of mathematical representation, convexity and continuity. They apply a stochastic method and hence expedite the search process. However, EA are not without their flaws which include a probabilistic convergence to the global optima. 
+
+In this paper, we follow a genetic modified Grey Wolf Optimization (GWO) algorithm to obtain and update candidate solutions. GWO follows a hierarchical structure of candidate solution which imitates the behaviour of Grey Wolves as observed in nature. The structure of $\alpha$, $\beta$, $\delta$ and $\omega$ labelled wolves. The $\alpha$ wolves are responsible for finding the global optimum whilst being guided by the $\beta$ wolves. The $\delta$ and $\omega$ provide secondary assistance to the leaders and hence maitain the dominant structure. After each search iteration, genetic operators like selection, crossover and mutation are applied to every candidate in the structure. The entire process is discribed in Algorithm $\ref{alg:gwo}$
+
+\begin{algorithm}[t]
+\footnotesize
+\caption{GWO pseudocode}
+\label{alg:gwo}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} Population size $\textit{n}$, random vectors $\vec{r\textsubscript{1}}$, $\vec{r\textsubscript{2}} \in$ [0,1], initial prey location $\vec{D}$, number of iterations \textit{I}, fitness function $\textit{f}$, coefficient vectors $\vec{A}$, $\vec{C}$ and $\vec{a}$
+\STATE Set $\textit{t}$ = 0
+\FOR{i $\in$ [1,n]}    
+\STATE Generate wolf pack population $\textit{X\textsubscript{i}(t)}$ at instance $\textit{t}$
+\STATE Evaluate each individual against the fitness function
+\ENDFOR
+\STATE Assign $\alpha, \beta, \delta$ titles to the top three solutions
+\STATE Evaluate $\vec{D} = |\vec{C} \cdot \vec{X\textsubscript{p}}(t) - \vec{X}(t)|$
+\FOR{\textit{i} in \textit{I}}
+\FOR{Each individual in $\textit{n}$}  
+\STATE $\vec{X\textsubscript{1}} = \vec{X\textsubscript{$\alpha$}} - \vec{A\textsubscript{1}} \cdot  \vec{D\textsubscript{$\alpha$}}$
+\STATE $\vec{X\textsubscript{2}} = \vec{X\textsubscript{$\beta$}} - \vec{A\textsubscript{2}} \cdot  \vec{D\textsubscript{$\beta$}}$
+\STATE $\vec{X\textsubscript{3}} = \vec{X\textsubscript{$\delta$}} - \vec{A\textsubscript{3}} \cdot  \vec{D\textsubscript{$\delta$}}$
+\STATE Evaluate $\vec{X}(t+1) = \frac{\vec{X\textsubscript{1}} + \vec{X\textsubscript{2}} + \vec{X\textsubscript{3}}}{3}$
+\ENDFOR
+\STATE Update the coefficient vectors $\vec{A}$ and $\vec{C}$
+\STATE $\vec{A} = 2\vec{a} \cdot \vec{r\textsubscript{1}} - \vec{a}$
+\STATE $\vec{C} = 2\vec{r\textsubscript{2}}$
+\STATE Linearly decrease $\vec{a}$ from 2 to 0
+% \STATE Update $\vec{X\textsubscript{$\alpha$}}, \vec{X\textsubscript{$\beta$}}, \vec{X\textsubscript{$\delta$}}$
+\STATE Perform Crossover, Selection and Mutation
+\STATE Increment $\textit{t}$
+\ENDFOR
+\STATE $\vec{X\textsubscript{$\alpha$}}$ corresponds to the global optimum. 
+\end{algorithmic}
+\end{algorithm}
+
+The genetic operators for a sample candidate in the form of a genomic are explained here following which the process is depicted in Figure :
+\begin{itemize}
+\item Selection: Given a population of potential solutions, selection involves grading these solutions against a fitness function. The selected solutions are cast into the crossover stage.
+\item Crossover: From the selected set of solutions, randomly two solutions are selected and the next generation chromosome is created which shares the best attributes of it's parents.
+\item Mutation: The selected solutions undergo random changes in their composition to promote diversity and increase their changes of converging to the global optimum.
+\end{itemize}
+
+\begin{figure}
+\centering\includegraphics[width=7cm]{p2.png}
+\caption{Genetic Operators}
+\label{p3}
+\end{figure}
 % This document is a model and instructions for \LaTeX.
 % Please observe the conference page limits. 
 % 
