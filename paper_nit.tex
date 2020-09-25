@@ -7,6 +7,7 @@
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
+\usepackage{amssymb}
 \usepackage{physics}
 \usepackage{amsmath}% http://ctan.org/pkg/amsmath
 \newcommand\sufr[3][0pt]{$\rule{0pt}{\dimexpr#1+1.4ex\relax}^\frac{#2}{#3}$}
@@ -15,7 +16,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Quantum Mechanics Enabled Genetic Programming\\
+\title{Evolved Quantum Computing Based Problem Solving\\
 % {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
 % should not be used}
 % \thanks{Identify applicable funding agency here. If none, delete this.}
@@ -214,11 +215,116 @@ The genetic operators for a sample candidate in the form of a genomic are explai
 \item Mutation: The selected solutions undergo random changes in their composition to promote diversity and increase their changes of converging to the global optimum.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[!t]
 \centering\includegraphics[width=7cm]{p2.png}
 \caption{Genetic Operators}
 \label{p3}
 \end{figure}
+
+\section{Evolved Quantum Computing}
+
+Evolved self-organizing computer programs utilize the techniques described in the previous section to solve problems. In this paper the following general problem structure is considered; How to design a circuit to travel from state $\textit{A}$ to state $\textit{B}$? These problem types are called "Oracle Analysis" as they require we to determine some property of a valid quantum gate with no prior information on the intermediate states and what combination of gates results in what output. Some of the key terminologies used in the following texts are explained in Table $\ref{tab:1}$
+
+\begin{table}[!t]
+\caption{\textsc{Basic Terminology}}
+\label{tab:1}
+\centering
+{
+\begin{tabular}{| c | c |}
+\hline
+Symbol  & Description \\
+\hline
+$\psi\textsubscript{i}$ & Current State \\ 
+$\psi\textsubscript{o}$ & Desired State \\
+$\psi\textsubscript{best}$ & Current Best State \\
+$\textit{T}$ & Circuit operator\\
+$\textit{F}$ & Fitness function\\
+$\textit{M}$ & Number of chromosomes\\
+$\textit{G}$ & Number of generations\\
+$\textit{sel\_tech}$ & Selection Techniques\\
+$\textit{cross\_tech}$ & Crossover Techniques\\
+$\textit{mut\_tech}$ & Mutation Techniques\\
+$\textit{n}$ & Dimensionality of chromosome\\
+$\textit{U(n)}$ & Space of all $\textit{n}$ dimensional matrices\\
+$\textit{H\textsubscript{cur}}$ & Current Gate Matrix\\
+$\textit{H\textsubscript{cur}\textsuperscript{$\dagger$}}$ & Hermitean Adjoint of $\textit{H\textsubscript{cur}}$\\
+$\ket{A\textsubscript{k}}(\psi)$ & Orthonormal basis of the environment Hilbert space\\
+$p\textsubscript{k}$ & Input mapped to Hilbert space\\
+$q\textsubscript{k}$ & Output mapped to Hilbert space\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{Problem Solving Technique}
+
+The process of achieving the target state is discussed in this section. For any test function provided, a set of $\textit{M}$ chromosomes are initialized and based on the input, $\textit{U(n)}$ is laid out. Consider applying set of quantum operators $\textit{Q\textsubscript{$\mu$}}$ on the quantum register of chromosomes for $\mu \in [1,o]$. The output state $\mu$ for an input qubit chromosome $\ket{\psi\textsubscript{i}}$ using operator $\textit{Q\textsubscript{$\mu$}}$, can be determined in a probabilistic manner as shown in Equation $\ref{eq:2}$
+
+\begin{equation}
+\label{eq:2}
+Pr(\mu) = \bra{\psi} Q\textsubscript{$\mu$}\textsuperscript{$\dagger$}Q\textsubscript{$\mu$}\ket{\psi}
+\end{equation}
+
+Similarly the probability of a required state $\mu$ is given in Equation $\ref{eq:3}$
+
+\begin{equation}
+\label{eq:3}
+\ket{\mu} = \frac{Q\textsubscript{$\mu$}\ket{\psi}}{\sqrt{Pr(\mu)}}
+\end{equation}
+
+Since the states can be unitary i.e $\textit{H\textsubscript{cur}} \cdot$ $\textit{H\textsubscript{cur}\textsuperscript{$\dagger$}} = I$, elements of $\textit{U(n)}$ will have a definite form. For example, any element of $\textit{U(2)}$, say $\textit{T}$, will have the following format for complex inputs $z\textsubscript{1}$ and $z\textsubscript{2}$ seperated by an angle $\theta$:
+$$
+\begin{bmatrix} 
+{z\textsubscript{1}}&{z\textsubscript{2}}\\
+{-e\textsuperscript{i$\theta$}z\textsubscript{1}\textsuperscript{*}}&{-e\textsuperscript{i$\theta$}z\textsubscript{2}\textsuperscript{*}}\\
+\end{bmatrix}
+\quad
+$$
+
+Now the problem boils down to selection of a particular configuration of these gates. EA uses this subspace and evolutionary techniques to get from  $\psi\textsubscript{i}$ to $\psi\textsubscript{o}$ in $\textit{G}$ generations. A grid of $\textit{sel\_tech}$, $\textit{cross\_tech}$ and $\textit{mut\_tech}$ is created and all the matrices are graded according to $\textit{F}$. This step leads into Algorithm $\ref{alg:gwo}$ which provides the optimal circuit configuration to reach $\psi\textsubscript{best}$, that is closest to $\psi\textsubscript{2}$. The entire process is descibed in Algorithm $\ref{alg:eq}$. 
+
+\begin{algorithm}[!b]
+\footnotesize
+\caption{Evolutionary Quantum Algorithm}
+\label{alg:eq}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} $\psi\textsubscript{i}$, $\psi\textsubscript{o}$, $\textit{F}$, $\textit{M}$, $\textit{G}$, $\textit{sel\_tech}$, $\textit{cross\_tech}$ and $\textit{mut\_tech}$
+\STATE Identify $\textit{n}$ as dimension of input
+\STATE Create a grid encompassing all combinations of $\textit{sel\_tech}$, $\textit{cross\_tech}$ and $\textit{mut\_tech}$
+\FOR{Each generation $\textit{G}$}
+\STATE Evaluate the chromosomes against $\textit{F}$
+\STATE Call Algorithm $\ref{alg:gwo}$ with the grid, $\psi\textsubscript{i}$ and $\psi\textsubscript{o}$ 
+\STATE Obtain returned $\psi\textsubscript{best}$
+\ENDFOR
+\STATE Select the optimal $\psi\textsubscript{best}$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Key Points}
+Some of the important points governing the flow of the algorithm are mentioned below:
+
+\begin{itemize}
+\item The input chromosomes provided are in the form of a bit vector, which is later translated to a quantum register i.e, $\psi$ = $\psi\textsubscript{1} \oplus \psi\textsubscript{2} \oplus \dots \psi\textsubscript{n}$. The $\oplus$ operator is called the tensorial product in the Hilbert space.
+
+\item The most important characteristic of this endeavour is the ability of both the sub-algorithm to retain information. For the evolutionary part, it is the lower swarm particles who memorize the pitfalls. Information retention in QC is guarenteed by the No-Hiding Theorem. The No-Hiding Theorem in an enlarged Hilbert space is given in Equation $\ref{eq:4}$. Due to the correlation between subsystems, quantum information cannot be lost. 
+
+\begin{equation}
+\label{eq:4}
+\begin{split}
+\ket{\mu} \otimes \ket{A} & \rightarrow \sum_{k}^{}\sqrt{p\textsubscript{k}}\ket{k} \otimes \ket{A\textsubscript{k}(\psi)}\\
+& = \sum_{k}^{}\sqrt{p\textsubscript{k}}\ket{k} \otimes (\ket{q\textsubscript{k}} \otimes \ket{psi} \otimes 0)
+\end{split}
+\end{equation}
+
+\item The unused dimension of the Hilbert space are filled by $\otimes 0$ vectors. These unused dimensions can be utilized to completely hide a subsystem and hence delete the information.
+\end{itemize}
+
+\subsection{Fitness Selection}
+The evolutionary algorithm depends greatly on the quality of the fitness function. It forms the basis for the next generation. In CC, tailor-made fitness function might suffice for each problem. But for a self-organizing QC system, the main program would have to run multiple times to determine the fitness from each output. Even if a real quantum computer was used, we would get one output and it's associated probability from each epoch. The probabilty of error so obtained could then be utilized to function as a fitness function. The only drawback in this method would be the absense of a quantum computer and the result exponential computational resources. 
+
+The probability of error, in itself is inadequete to function as a fitness function for a QC system. This is due to the extreme ease with which a program could be produced with a 50\% best case accuracy that is no where close to the real output. As an analogy, construction of such a program to decide the circuit would be like tossing a coin to decide the next gate in the circuit. 
+
+The function used in this paper is a combination of the probability of error and a count of the number of fitness cases for which the program produces better results in more than 50\% of the cases. Multiple calls can be made to the "Oracle" to minimize the number of gates in the circuit. Other quantum mechanical properties could also be utilized for improved fitness functions. 
 % This document is a model and instructions for \LaTeX.
 % Please observe the conference page limits. 
 % 
