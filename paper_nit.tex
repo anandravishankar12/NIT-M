@@ -320,11 +320,93 @@ Some of the important points governing the flow of the algorithm are mentioned b
 \end{itemize}
 
 \subsection{Fitness Selection}
-The evolutionary algorithm depends greatly on the quality of the fitness function. It forms the basis for the next generation. In CC, tailor-made fitness function might suffice for each problem. But for a self-organizing QC system, the main program would have to run multiple times to determine the fitness from each output. Even if a real quantum computer was used, we would get one output and it's associated probability from each epoch. The probabilty of error so obtained could then be utilized to function as a fitness function. The only drawback in this method would be the absense of a quantum computer and the result exponential computational resources. 
+The evolutionary algorithm depends greatly on the quality of the fitness function. It forms the basis for the next generation. In CC, tailor-made fitness function might suffice for each problem. But for a self-organizing QC system, the main program would have to run multiple times to determine the fitness from each output. Even if a real quantum computer was used, we would get one output and it's associated probability from each epoch. The probability of error so obtained could then be utilized to function as a fitness function. The only drawback in this method would be the absense of a quantum computer and the result exponential computational resources. 
 
 The probability of error, in itself is inadequete to function as a fitness function for a QC system. This is due to the extreme ease with which a program could be produced with a 50\% best case accuracy that is no where close to the real output. As an analogy, construction of such a program to decide the circuit would be like tossing a coin to decide the next gate in the circuit. 
 
 The function used in this paper is a combination of the probability of error and a count of the number of fitness cases for which the program produces better results in more than 50\% of the cases. Multiple calls can be made to the "Oracle" to minimize the number of gates in the circuit. Other quantum mechanical properties could also be utilized for improved fitness functions. 
+
+\subsection{Schema Theorem}
+The Schema Theorem dictates which chromosomes move on through the selection phase. If we consider each chromosome as a binary string, there are three possibilities for each bit. It can either be a 1, or a 0 or a * (wildcard) value. The wildcard bit can have either a 1 or a 0. There are two defining characteristics which dictate the goodness of fit. 
+
+\begin{itemize}
+\item Order: Number of non-wildcard bits 
+\item Defining Length: Distance between two furthermost non-wildcard bits
+\end{itemize}
+
+For eg, a chromosome '*10**01' will have an order of 4 and defining length of 5. This particular chromosome represents the set of chromosomes have a 0 or 1 in the leftmost bit, followed by a 10, then two wildcards and ends with a 01. The initial population corresponds to multiple schemata and over the course of applying the genetic operators, some survive while others survive. According to the schema theorem, schemata to low order, high fitness and short defining length reappear in future generations. For a better understanding, an analogy can be drawn between the schema and matching expressions using regular expersions in programming constructs.
+
+\section{Results and Discussion}
+
+Due to the unavailability of a quantum computer, an artificial environment was created and simulations were conducted in it. The experiment was set up on a 64-bit Machine with Ubuntu 20.04, Intel® CoreTM i5-7200U CPU @ 2.50GHz × 4, with a GeForce 940MX/PCle/SSE2 graphic card. 
+
+In order to design a quantum state system, we provide the program with a set of input qubits mapped to set of ouput qubit. As discussed previously the fitness function is chosen as a lexicographic combination of the number of misses and probability of error as given in Equation $\ref{eq:5}$, where $\alpha$ is a scaling factor, $\textit{m}$ is number of misses and $\textit{e}$ is probability of error. Lower the value returned by the fitness function, higher is the solution's quality.
+
+\begin{equation}
+\label{eq:5}
+f = \alpha m + e
+\end{equation}
+
+Following this, an initial set of chromosomes corresponding to the ideal circuit were created and gently evolved for set number of generations. The generation progression is composed of the previously mentioned genetic operators. A global count of the best fitness achieved for far is mentioned and the matrix corresponding to that score is declared as the optimal circuit design. The results have been composed for 100 generations in 10 test runs and displayed in Table $\ref{tab:1}$.  
+
+
+\begin{table*}[!t]
+\caption{\textsc{Results}}
+\label{tab:1}
+\centering
+{
+\begin{tabular}{| c | c | c | c | c |}
+\hline
+Experiment No. & Input Qubit & Output Qubit & Number of Chromosomes &  Best Fitness Value \\
+\hline
+ & [0 1 1 1 0 1 0 0] & [0 0 0 0 1 1 1 1] & 10 & 0.5081 \\
+1 & [0 1 1 1 0 1 0 0] & [0 0 0 0 1 1 1 1] & 50 & 0.5134 \\
+ & [0 1 1 1 0 1 0 0] & [0 0 0 0 1 1 1 1] & 100 & 0.5106 \\
+\hline
+ & [0 1 1 0 0 1 1 1] & [0 0 1 0 1 0 1 1] & 10 & 0.4366 \\
+2 & [0 1 1 0 0 1 1 1] & [0 0 1 0 1 0 1 1] & 50 & 0.4821 \\
+ & [0 1 1 0 0 1 1 1] & [0 0 1 0 1 0 1 1] & 100 & 0.4911 \\
+\hline
+ & [1 0 1 1 1 1 1 1] & [0 1 1 0 0 1 1 0] & 10 & 0.3985 \\
+3 & [1 0 1 1 1 1 1 1] & [0 1 1 0 0 1 1 0] & 50 & 0.3672 \\
+ & [1 0 1 1 1 1 1 1] & [0 1 1 0 0 1 1 0] & 100 & 0.3725 \\
+\hline
+ & [1 0 1 1 1 1 0 1] & [1 1 0 1 0 1 0 0] & 10 & 0.4786 \\
+4 & [1 0 1 1 1 1 0 1] & [1 1 0 1 0 1 0 0] & 50 & 0.4332 \\
+ & [1 0 1 1 1 1 0 1] & [1 1 0 1 0 1 0 0] & 100 & 0.4189 \\
+\hline
+ & [1 0 0 1 1 0 0 0] & [0 1 0 1 0 1 1 0] & 10 & 0.6444 \\
+5 & [1 0 0 1 1 0 0 0] & [0 1 0 1 0 1 1 0] & 50 & 0.5842 \\
+ & [1 0 0 1 1 0 0 0] & [0 1 0 1 0 1 1 0] & 100 & 0.6179 \\
+\hline
+ & [1 0 0 1 1 0 0 0] & [1 1 1 1 0 0 0 0] & 10 & 0.6444 \\
+6 & [1 0 0 1 1 0 0 0] & [1 1 1 1 0 0 0 0] & 50 & 0.5842 \\
+ & [1 0 0 1 1 0 0 0] & [1 1 1 1 0 0 0 0] & 100 & 0.6179 \\
+\hline
+ & [0 0 1 0 1 1 1 0] & [0 1 0 0 0 0 0 1] & 10 & 0.5895 \\
+7 & [0 0 1 0 1 1 1 0] & [0 1 0 0 0 0 0 1] & 50 & 0.6294 \\
+ & [0 0 1 0 1 1 1 0] & [0 1 0 0 0 0 0 1] & 100 & 0.5574 \\
+\hline
+ & [0 0 1 1 0 1 0 1] & [1 1 1 0 0 1 1 0] & 10 & 0.4689 \\
+8 & [0 0 1 1 0 1 0 1] & [1 1 1 0 0 1 1 0] & 50 & 0.4355 \\
+ & [0 0 1 1 0 1 0 1] & [1 1 1 0 0 1 1 0] & 100 & 0.4476 \\
+\hline
+ & [0 0 0 0 0 1 1 0] & [1 0 1 1 1 1 0 1] & 10 & 0.5610 \\
+9 & [0 0 0 0 0 1 1 0] & [1 0 1 1 1 1 0 1] & 50 & 0.5812 \\
+ & [0 0 0 0 0 1 1 0] & [1 0 1 1 1 1 0 1] & 100 & 0.4877 \\
+\hline
+ & [0 1 1 1 0 0 0 0] & [1 1 1 1 1 0 0 1] & 10  & 0.4919 \\
+10 & [0 1 1 1 0 0 0 0] & [1 1 1 1 1 0 0 1] & 50  & 0.4682 \\
+ & [0 1 1 1 0 0 0 0] & [1 1 1 1 1 0 0 1] & 100  & 0.4158 \\
+\hline
+\end{tabular}
+}
+\end{table*}
+
+As we can see, the results for test run 2, 3, 4, 8 and 10 are extremely promising. Further fine tuning could be applied to narrow down the chromosome population. These results act as proof-of-concept when it comes to combing the field of computational intelligence with quantum mechanics. 
+
+The main area of improvment would involve identifying and realizing any inherent parallelism which would scale this project exponentially. Genetic computing methods have often been touted as "embarrasingly parallel" due to the increase in throughput and overall performance when deployed on large computing clusters. The reasoning provided is based on the fact that evolutionary computing deals with population batches which are divided into sub-populations called demes, which perform the same function. Similarly, for QC  parallelization is important as the applications call for similar computer simulations in the fitness test. While quantum mechanics dwells in the field of decreasing memory requirement, parallelism is well equipped to manage the allocated memory optimally.  
+
 % This document is a model and instructions for \LaTeX.
 % Please observe the conference page limits. 
 % 
