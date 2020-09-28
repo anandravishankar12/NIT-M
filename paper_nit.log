@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  26 SEP 2020 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  28 SEP 2020 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,6 +374,34 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+Underfull \hbox (badness 5622) in paragraph at lines 428--429
+\OT1/ptm/m/n/8 is-ters, gates and al-go-rithms," 2012 28th In-ter-na-tional Con
+-fer-
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 430--431
+[]\OT1/ptm/m/n/8 D. Jitkongchuen, P. Phaidang and P. Pongtaw-e-vi-rat, "Grey wo
+lf
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 430--431
+\OT1/ptm/m/n/8 op-ti-miza-tion al-go-rithm with invasion-based mi-gra-tion op-e
+r-a-tion,"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+\OT1/ptm/m/n/8 2016 IEEE/ACIS 15th In-ter-na-tional Con-fer-ence on Com-puter
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 430--431
+\OT1/ptm/m/n/8 and In-for-ma-tion Sci-ence (ICIS), Okayama, 2016, pp. 1-5, doi:
+
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -385,21 +413,19 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] [6] (./paper_nit.aux)
+[5] [6] (./paper_nit.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4992 strings out of 481239
- 73717 string characters out of 5920378
- 338979 words of memory out of 5000000
- 20201 multiletter control sequences out of 15000+600000
+ 5003 strings out of 481239
+ 73770 string characters out of 5920378
+ 341014 words of memory out of 5000000
+ 20212 multiletter control sequences out of 15000+600000
  576297 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,20n,38p,1021b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,20n,38p,1033b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -417,7 +443,7 @@ fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper_nit.pdf (6 pages, 413915 bytes).
+Output written on paper_nit.pdf (6 pages, 416452 bytes).
 PDF statistics:
  102 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
