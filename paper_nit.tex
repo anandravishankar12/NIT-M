@@ -125,11 +125,12 @@ $$
 $$
 
 Quantum Mechanics is a generalized extension of classical method. The first generalization comes in the form of the temporal values of the elements of the matrix. In QC qubits are utilized instead of bits and as a result the state vectors are variables. Instead of 0 and 1, state vector can be constituted of complex numbers which meet the condition of unitarity. For any matrix $\textit{M}$ to be an unitarity matrix, the only necessary condition is shown in Equation $\ref{eq:1}$ where $M\textsuperscript{$\dagger$}$ is the Hermitean adjoint of $\textit{M}$ and $\textit{I}$ is the identity matrix. 
-
+{\scriptsize
 \begin{equation}
 \label{eq:1}
 M\textsuperscript{$\dagger$}M = MM\textsuperscript{$\dagger$} = I
 \end{equation}
+}
 
 To facilitate the design of circuitry of state diagrams, QC introduces a set of gates to utilize the power of quantum mechanics \cite{qg}. The noteworthy ones are mentioned below:
 
@@ -259,19 +260,19 @@ $q\textsubscript{k}$ & Output mapped to Hilbert space\\
 \subsection{Problem Solving Technique}
 
 The process of achieving the target state is discussed in this section. For any test function provided, a set of $\textit{M}$ chromosomes are initialized and based on the input, $\textit{U(n)}$ is laid out. Consider applying set of quantum operators $\textit{Q\textsubscript{$\mu$}}$ on the quantum register of chromosomes for $\mu \in [1,o]$. The output state $\mu$ for an input qubit chromosome $\ket{\psi\textsubscript{i}}$ using operator $\textit{Q\textsubscript{$\mu$}}$, can be determined in a probabilistic manner as shown in Equation $\ref{eq:2}$
-
+{\scriptsize
 \begin{equation}
 \label{eq:2}
 Pr(\mu) = \bra{\psi} Q\textsubscript{$\mu$}\textsuperscript{$\dagger$}Q\textsubscript{$\mu$}\ket{\psi}
 \end{equation}
-
+}%
 Similarly the probability of a required state $\mu$ is given in Equation $\ref{eq:3}$
-
+{\scriptsize
 \begin{equation}
 \label{eq:3}
 \ket{\mu} = \frac{Q\textsubscript{$\mu$}\ket{\psi}}{\sqrt{Pr(\mu)}}
 \end{equation}
-
+}
 Since the states can be unitary i.e $\textit{H\textsubscript{cur}} \cdot$ $\textit{H\textsubscript{cur}\textsuperscript{$\dagger$}} = I$, elements of $\textit{U(n)}$ will have a definite form. For example, any element of $\textit{U(2)}$, say $\textit{T}$, will have the following format for complex inputs $z\textsubscript{1}$ and $z\textsubscript{2}$ seperated by an angle $\theta$:
 $$
 \begin{bmatrix} 
@@ -307,7 +308,7 @@ Some of the important points governing the flow of the algorithm are mentioned b
 \item The input chromosomes provided are in the form of a bit vector, which is later translated to a quantum register i.e, $\psi$ = $\psi\textsubscript{1} \oplus \psi\textsubscript{2} \oplus \dots \psi\textsubscript{n}$. The $\oplus$ operator is called the tensorial product in the Hilbert space.
 
 \item The most important characteristic of this endeavour is the ability of both the sub-algorithm to retain information. For the evolutionary part, it is the lower swarm particles who memorize the pitfalls. Information retention in QC is guarenteed by the No-Hiding Theorem. The No-Hiding Theorem in an enlarged Hilbert space is given in Equation $\ref{eq:4}$. Due to the correlation between subsystems, quantum information cannot be lost. 
-
+{\scriptsize
 \begin{equation}
 \label{eq:4}
 \begin{split}
@@ -315,7 +316,7 @@ Some of the important points governing the flow of the algorithm are mentioned b
 & = \sum_{k}^{}\sqrt{p\textsubscript{k}}\ket{k} \otimes (\ket{q\textsubscript{k}} \otimes \ket{psi} \otimes 0)
 \end{split}
 \end{equation}
-
+}%
 \item The unused dimension of the Hilbert space are filled by $\otimes 0$ vectors. These unused dimensions can be utilized to completely hide a subsystem and hence delete the information.
 \end{itemize}
 
@@ -341,12 +342,12 @@ For eg, a chromosome '*10**01' will have an order of 4 and defining length of 5.
 Due to the unavailability of a quantum computer, an artificial environment was created and simulations were conducted in it. The experiment was set up on a 64-bit Machine with Ubuntu 20.04, Intel® CoreTM i5-7200U CPU @ 2.50GHz × 4, with a GeForce 940MX/PCle/SSE2 graphic card. 
 
 In order to design a quantum state system, we provide the program with a set of input qubits mapped to set of ouput qubit. As discussed previously the fitness function is chosen as a lexicographic combination of the number of misses and probability of error as given in Equation $\ref{eq:5}$, where $\alpha$ is a scaling factor, $\textit{m}$ is number of misses and $\textit{e}$ is probability of error. Lower the value returned by the fitness function, higher is the solution's quality.
-
+{\scriptsize
 \begin{equation}
 \label{eq:5}
 f = \alpha m + e
 \end{equation}
-
+}%
 Following this, an initial set of chromosomes corresponding to the ideal circuit were created and gently evolved for set number of generations. The generation progression is composed of the previously mentioned genetic operators. A global count of the best fitness achieved for far is mentioned and the matrix corresponding to that score is declared as the optimal circuit design. The results have been composed for 100 generations in 10 test runs and displayed in Table $\ref{tab:1}$.  
 
 
