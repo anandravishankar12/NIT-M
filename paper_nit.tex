@@ -62,7 +62,7 @@
 \maketitle
 
 \begin{abstract}
-Quantum Computing (QC) has often been touted as an esoteric and terrifying field of computing research. However, the possible advantages offered by the inherent quantum fundamentals beseeches extensive additional ventures into this field. Likewise, Evolutionary Computing (EC) offers a multi-pronged approach by deploying several candidates into the search space with constraints guiding the search process. In this paper, we present Evolutionary Quantum Transition (EQUATe) to provide a unique solution to solving Multi-Optimization Objective Problems (MOOPs) using concepts borrowed from QC and EC. The combination leverages compute power to explore the space of candidate solutions by introducing smarter techniques. The solution so obtained provides the optimal transition solution with an automated circuit selection process which can be attributed to the amazing capabilites of QC and EC. 
+Quantum Computing (QC) has often been touted as an esoteric and terrifying field of computing research. However, the possible advantages offered by the inherent quantum fundamentals beseeches extensive additional ventures into this field. Likewise, Evolutionary Computing (EC) offers a multi-pronged approach by deploying several candidates into the search space with constraints guiding the search process. In this paper, we present Evolutionary Quantum Transition (EQUATe) to provide a unique solution to solving Multi-Optimization Objective Problems (MOOPs) using concepts borrowed from QC and EC. The combination leverages compute power to explore the space of candidate solutions by introducing smarter techniques. The solution so obtained provides the optimal transition solution with an automated circuit selection process which can be attributed to the amazing capabilities of QC and EC. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -74,10 +74,10 @@ Quantum Computing, Evolutionary Computing, MOOPs, EQUATe, State Transition
 Majority of the problems faced in any aspect of computer science, in one way or another, involves a catch-22 of functional optimization. Entire fields have been dedicated to solving a generic version of this issue. The most common method of dealing with optimization problems is to be in collaboration with another interdisciplinary frontier acting in the capacity of a helper function. 
 
 \subsection{Modeling an Optimization Problem}
-Before any optimization can be performed, a mathematical or computational model for the problem must be prepared \cite{hara}. The quality of the model is just as crucial to the optimization task as the techniques employed. Drafting the model requires explicitly stating the variables, constraints and objective functions involved followed by selection of an appropriate algorithm for the search process. 
+Before any optimization can be performed, a mathematical or computational model for the problem must be prepared \cite{hara}. The quality of the model is just as crucial to the optimization task as the techniques employed. Drafting the model requires explicitly stating the variables, constraints, and objective functions involved followed by the selection of an appropriate algorithm for the search process. 
 
 \subsection{Problem Formalization}
-The optimzation problems considered in this paper belong to the family of Multi-Objective Optimization Problems (MOOPs)\cite{mul}. Any other problem format can be derived from this main branch. A general MOOP is defined in Equation :
+The optimization problems considered in this paper belong to the family of Multi-Objective Optimization Problems (MOOPs)\cite{mul}. Any other problem format can be derived from this main branch. A general MOOP is defined in Equation :
 
 
 \begin{equation}
@@ -86,7 +86,7 @@ Optimize \{f\textsubscript{1}(x), f\textsubscript{2}(x), \dots, f\textsubscript{
 
 where $f\textsubscript{i}(x)$ is the $i\textsuperscript{th}$ sub-problem subject to certain constraints. The decision vector $X$ = ($x\textsubscript{1}, x\textsubscript{2}, \dots, x\textsubscript{n}$) belong to a nonempty feasible region $S$. The objective solution vector $Z$ =  $(f\textsubscript{1}(x), f\textsubscript{2}(x), \dots, f\textsubscript{k}(x))$ represents the required mapping in the feasible objective region $Z$. 
 
-Such a mapping is considered to be optimal if none of the individual components can be improved without degradation of at least one other component and such a solution vector is called a Pareto optimal solution \cite{pare}. An ideal objective vector $z\textsuperscript{*}$ can be obatined by minimizing every objective function individually subject to $S$. A vector strictly better than $z\textsuperscript{*}$ is called a utopian objective vector $z\textsuperscript{**}$. Similarly the upper bounds of the Pareto Optimal set constitute a nadir objective vector $z\textsuperscript{nad}$. Once the variables are decided, we can embark upon finding a solution to the optimization problem. There are various techniques which can be chosen to solve the problem. The most popular ones are desribed in the next section. 
+Such a mapping is considered to be optimal if none of the individual components can be improved without degradation of at least one other component and such a solution vector is called a Pareto optimal solution \cite{pare}. An ideal objective vector $z\textsuperscript{*}$ can be obtained by minimizing every objective function individually subject to $S$. A vector strictly better than $z\textsuperscript{*}$ is called a utopian objective vector $z\textsuperscript{**}$. Similarly, the upper bounds of the Pareto Optimal set to constitute a nadir objective vector $z\textsuperscript{nad}$. Once the variables are decided, we can embark upon finding a solution to the optimization problem. Various techniques can be chosen to solve the problem. The most popular ones are described in the next section. 
 
 \section{Computing Methologies}
 
@@ -122,12 +122,12 @@ Quantum Computing (QC)& Bra-ket representation instead of bits, & Space conserva
 % The field of applied quantum mechanics is still unexplored for the best part. However, there are certain applications in which QC outperforms CC. Consider Shor's algorithm \cite{shor} and RSA \cite{rsa}, both of which are used for encryption. Basically, the encryption of any form of data transmitted over the Internet relies immensley on factorization of a huge number. This process is extremley ardous for a non-quantum computer, with the best known factoring technique requiring an amount of time proportional to 2$\textsuperscript{n\textsuperscript{\sufr{1}{3}}log(n)\textsuperscript{\sufr{2}{3}}}$ 
 % , where $\textit{n}$ is the number of digits in the number to be factored \cite{guo}. Meanwhile Shor's Quantum algorithm requires time proportional to only $n\textsuperscript{2}log(n)log(log(n))$ \cite{ham}. 
 
-QC utilizes major quantum phenomena such as superposition, quantum entanglment, principle of uncertainity among others \cite{az}, for improving existing search and optimization techniques. The time required for processing a search request decreases exponentially in a QC environment as multiple states are entangled.  
+QC utilizes major quantum phenomena such as superposition, quantum entanglement, the principle of uncertainty among others \cite{az}, for improving existing search and optimization techniques. The time required for processing a search request decreases exponentially in a QC environment as multiple states are entangled.  
 % according to Moore's Law the size of computational units shrinks at an exponential rate as the number of transistors on a chipset increases every year. Even after accounting for physical constraints, a time will come when operations will be conducted on an atomic scale which quantum physics dominates classical physics. As a result, understanding QC and applying them in a virtual landscape to get a sense of their possibilities is a must. 
 
 \subsection{Using Evolutionary Algorithms}
 
-Evolutionary Algorithms (EA) \cite{vik} encompass a wide array of research ideas stemming from general principles of genetics and the theory of evolution. Models are developed to illustrate the behaviour of naturally occuring phenomena, develop these algorithms and test out the application of the corresponding theory. The general process of any EA is depicted in figure \ref{p1}. 
+Evolutionary Algorithms (EA) \cite{vik} encompass a wide array of research ideas stemming from general principles of genetics and the theory of evolution. Models are developed to illustrate the behavior of naturally occurring phenomena, develop these algorithms, and test out the application of the corresponding theory. The general process of any EA is depicted in figure \ref{p1}. 
 
 \begin{figure}[!t]
 \centering\includegraphics[height=6.75cm]{p1.png}
@@ -136,7 +136,7 @@ Evolutionary Algorithms (EA) \cite{vik} encompass a wide array of research ideas
 \end{figure}
 
 \subsection{A Novel Ensemble}
-As we have seen, each vertical offers it's own advantages and disadvantages when it comes to solving an optimization problem. A trade-off exists between CC and QC when it comes to delivering quality results in a reduced time frame and availability of resources to implement the search process. Meanwhile, EC offers a multi-pronged approach to the search process by applying certain constraints and operators which results in the emergence of the best results with a decreased time complexity. EQUATe borrows the most promising concepts from QC and EC to provide a new front to solving optimization problems. The space saving capabilities offered by QC are excellent additions to EQUATe. Likewise the evolutionary model offered by EC boost the search process. The general MOOP is a relatively broad set of problems, with each individual problem requiring certain tweaks to the solution search process. In this paper, we narrow down the MOOPs to a specific case i.e, Design a circuit to achieve state $j$ from $i$ with multiple cost considerations. 
+As we have seen, each vertical offers it's own advantages and disadvantages when it comes to solving an optimization problem. A trade-off exists between CC and QC when it comes to delivering quality results in a reduced time frame and availability of resources to implement the search process. Meanwhile, EC offers a multi-pronged approach to the search process by applying certain constraints and operators which results in the emergence of the best results with a decreased time complexity. EQUATe borrows the most promising concepts from QC and EC to provide a new front to solving optimization problems. The space-saving capabilities offered by QC are excellent additions to EQUATe. Likewise, the evolutionary model offered by EC boosts the search process. The general MOOP is a relatively broad set of problems, with each problem requiring certain tweaks to the solution search process. In this paper, we narrow down the MOOPs to a specific case i.e, Design a circuit to achieve state $j$ from $i$ with multiple cost considerations. 
 % \subsection{Computing Methodologies}
 % 
 % Most form of computational algorithms in the present day, are executed on a conventional computer. The fundamental notation used for differentiating Classical Computing (CC) and QC \cite{nara} is the basic unit of information. While classical computers use bits 0 and 1, quantum computers use "one of" two computational basis states. The label awarded to these states is "bra-ket" notation i.e, state $\ket{0}$ or $\ket{1}$. Bits are assigned states 0 or 1 deterministically and independently. However, qbuits can exist in a superposition state of $\alpha\textsubscript{0}$$\ket{0}$ + $\alpha\textsubscript{1}$$\ket{1}$, where $\alpha{0}$ and $\alpha{1}$ are complex numbers, such that $|\alpha\textsubscript{0}|\textsuperscript{2}$ + $|\alpha\textsubscript{1}|\textsuperscript{2}$ = 1.
@@ -303,14 +303,14 @@ $q\textsubscript{k}$ & Output mapped to Hilbert space\\
 \end{table}
 
 \subsection{Conventional Approach}
-The conventional process would involve declaration of a register of size $\textit{n}$ and listing out all possible combinations for reaching state $\textit{x\textsubscript{j}}$ along with the costs. This would be followed by creation of a logical circutry of gates mapping the input state to the output state using boolean primitives. The entire process could still be automated using certain advanced algorithms. However, the memory utilization will not be optimal as all possible state transitions must be considered before building the circuit. Figure $\ref{p2}$ displays the state table, state diagram and accompanying circuit diagram for a D flip flop. Notice that all possible states for the input have been mentioned in the state table. This constitues a huge waste of memory as majority of the inputs are never encountered and some states could be invalid. QC aims to reduce this inefficiency between making all the states dependent on each other.
+The conventional process would involve a declaration of a register of size $\textit{n}$ and listing out all possible combinations for reaching state $\textit{x\textsubscript{j}}$ along with the costs. This would be followed by the creation of a logical circuitry of gates mapping the input state to the output state using boolean primitives. The entire process could still be automated using certain advanced algorithms. However, the memory utilization will not be optimal as all possible state transitions must be considered before building the circuit. Figure $\ref{p2}$ displays the state table, state diagram, and accompanying circuit diagram for a D flip flop. Notice that all possible states for the input have been mentioned in the state table. This constitutes a huge waste of memory as the majority of the inputs are never encountered and some states could be invalid. QC aims to reduce this inefficiency between making all the states dependent on each other.
 
 \subsection{EQUATe Approach}
 
-The conventional approach is extremely inefficient and arduous. EQUATe offers an elegant solution by utilizing the best of both the worlds. 
+The conventional approach is extremely inefficient and arduous. EQUATe offers an elegant solution by utilizing the best of both worlds. 
 
 \subsubsection{Applied Quantum Mechanics for EQUATe}
-Classicial state transitions cannot fathom superposition and hence will always be fixated on one fixed state. For the D flip flop example, the number of inputs are two and hence the number of output states is $2\textsuperscript{2}$ for each starting state. The 4 possible states can be represented as an one-hot encoded vector with each bit representing the state of the output. For example, the vector shown below represents state 00 for an input state of 0.
+Classical state transitions cannot fathom superposition and hence will always be fixated on one fixed state. For the D flip flop example, the number of inputs is two and hence the number of output states is $2\textsuperscript{2}$ for each starting state. The 4 possible states can be represented as a one-hot encoded vector with each bit representing the state of the output. For example, the vector shown below represents state 00 for an input state of 0.
 $$
 \begin{bmatrix} 
 1&0&0&0\\
@@ -318,7 +318,7 @@ $$
 \quad
 $$
 
-Quantum Mechanics is a generalized extension of classical method. The first generalization comes in the form of the temporal values of the elements of the matrix. In QC qubits are utilized instead of bits and as a result the state vectors are variables. Instead of 0 and 1, state vector can be constituted of complex numbers which meet the condition of unitarity. For any matrix $\textit{M}$ to be an unitarity matrix, the only necessary condition is shown in Equation $\ref{eq:1}$ where $M\textsuperscript{$\dagger$}$ is the Hermitean adjoint of $\textit{M}$ and $\textit{I}$ is the identity matrix. 
+Quantum Mechanics is a generalized extension of the classical method. The first generalization comes in the form of the temporal values of the elements of the matrix. In QC qubits are utilized instead of bits and as a result, the state vectors are variables. Instead of 0 and 1, the state vector can be constituted of complex numbers that meet the condition of unitarity. For any matrix $\textit{M}$ to be an unitarity matrix, the only necessary condition is shown in Equation $\ref{eq:1}$ where $M\textsuperscript{$\dagger$}$ is the Hermitian adjoint of $\textit{M}$ and $\textit{I}$ is the identity matrix. 
 
 \begin{equation}
 \label{eq:1}
@@ -365,7 +365,7 @@ cos(\theta)&sin(\theta)\\
 $$
 \end{itemize}
 
-The process of achieving the target state is discussed in this section. For any test function provided, a set of $\textit{M}$ chromosomes are initialized and based on the input, $\textit{U(n)}$ is laid out. Consider applying set of quantum operators $\textit{Q\textsubscript{$\mu$}}$ on the quantum register of chromosomes for $\mu \in [1,o]$. The output state $\mu$ for an input qubit chromosome $\ket{\psi\textsubscript{i}}$ using operator $\textit{Q\textsubscript{$\mu$}}$, can be determined in a probabilistic manner as shown in Equation $\ref{eq:2}$
+The process of achieving the target state is discussed in this section. For any test function provided, a set of $\textit{M}$ chromosomes are initialized, and based on the input, $\textit{U(n)}$ is laid out. Consider applying set of quantum operators $\textit{Q\textsubscript{$\mu$}}$ on the quantum register of chromosomes for $\mu \in [1,o]$. The output state $\mu$ for an input qubit chromosome $\ket{\psi\textsubscript{i}}$ using operator $\textit{Q\textsubscript{$\mu$}}$, can be determined in a probabilistic manner as shown in Equation $\ref{eq:2}$
 
 \begin{equation}
 \label{eq:2}
@@ -409,9 +409,9 @@ Now the problem boils down to selection of a particular configuration of these g
 
 \subsection{Applied Evolutionary Operators for EQUATe}
 
-EA have been used extensively for complex optimization problems due to quality results even with a lack of mathematical representation, convexity and continuity. They apply a stochastic method and hence expedite the search process. However, EA are not without their flaws which include a probabilistic convergence to the global optima. 
+EC has been used extensively for complex optimization problems due to quality results even with a lack of mathematical representation, convexity, and continuity. They apply a stochastic method and hence expedite the search process. However, EA is not without their flaws which include a probabilistic convergence to the global optima. 
 
-In this paper, we follow a genetically modified Grey Wolf Optimization (GWO) algorithm \cite{gwo} to obtain and update candidate solutions. GWO follows a hierarchical structure of candidate solution which imitates the behaviour of Grey Wolves as observed in nature. The structure of $\alpha$, $\beta$, $\delta$ and $\omega$ labelled wolves. The $\alpha$ wolves are responsible for finding the global optimum whilst being guided by the $\beta$ wolves. The $\delta$ and $\omega$ provide secondary assistance to the leaders and hence maitain the dominant structure. After each search iteration, genetic operators like selection, crossover and mutation are applied to every candidate in the structure. The entire process is discribed in Algorithm $\ref{alg:gwo}$
+In this paper, we follow a genetically modified Grey Wolf Optimization (GWO) algorithm \cite{gwo} to obtain and update candidate solutions. GWO follows a hierarchical structure of the candidate solution which imitates the behavior of Grey Wolves as observed in nature. The structure of $\alpha$, $\beta$, $\delta$ and $\omega$ labelled wolves. The $\alpha$ wolves are responsible for finding the global optimum whilst being guided by the $\beta$ wolves. The $\delta$ and $\omega$ provide secondary assistance to the leaders and hence maintain the dominant structure. After each search iteration, genetic operators like selection, crossover, and mutation are applied to every candidate in the structure. The entire process is described in Algorithm $\ref{alg:gwo}$
 
 \begin{algorithm}[t]
 \footnotesize
@@ -516,7 +516,7 @@ Some of the important points governing the flow of the algorithm are mentioned b
 \begin{itemize}
 \item The input chromosomes provided are in the form of a bit vector, which is later translated to a quantum register i.e, $\psi$ = $\psi\textsubscript{1} \oplus \psi\textsubscript{2} \oplus \dots \psi\textsubscript{n}$. The $\oplus$ operator is called the tensorial product in the Hilbert space.
 
-\item The most important characteristic of this endeavour is the ability of both the sub-algorithm to retain information. For the evolutionary part, it is the lower swarm particles who memorize the pitfalls. Information retention in QC is guarenteed by the No-Hiding Theorem. The No-Hiding Theorem in an enlarged Hilbert space is given in Equation $\ref{eq:4}$. Due to the correlation between subsystems, quantum information cannot be lost. 
+\item The most important characteristic of this endeavor is the ability of both the sub-algorithm to retain information. For the evolutionary part, it is the lower swarm particles who memorize the pitfalls. Information retention in QC is guaranteed by the No-Hiding Theorem. The No-Hiding Theorem in an enlarged Hilbert space is given in Equation $\ref{eq:4}$. Due to the correlation between subsystems, quantum information cannot be lost. 
 
 \begin{equation}
 \label{eq:4}
@@ -526,24 +526,24 @@ Some of the important points governing the flow of the algorithm are mentioned b
 \end{split}
 \end{equation}
 
-\item The unused dimension of the Hilbert space are filled by $\otimes 0$ vectors. These unused dimensions can be utilized to completely hide a subsystem and hence delete the information.
+\item The unused dimension of the Hilbert space is filled by $\otimes 0$ vectors. These unused dimensions can be utilized to completely hide a subsystem and hence delete the information.
 \end{itemize}
 
 \subsection{QC Critical Factor: Schema Theorem}
-The Schema Theorem \cite{st} dictates which chromosomes move on through the selection phase. If we consider each chromosome as a binary string, there are three possibilities for each bit. It can either be a 1, or a 0 or a * (wildcard) value. The wildcard bit can have either a 1 or a 0. There are two defining characteristics which dictate the goodness of fit. 
+The Schema Theorem \cite{st} dictates which chromosomes move on through the selection phase. If we consider each chromosome as a binary string, there are three possibilities for each bit. It can either be a 1, or a 0 or a * (wildcard) value. The wildcard bit can have either a 1 or a 0. There are two defining characteristics that dictate the goodness of fit. 
 
 \begin{itemize}
 \item Order: Number of non-wildcard bits 
 \item Defining Length: Distance between two furthermost non-wildcard bits
 \end{itemize}
 
-For eg, a chromosome '*10**01' will have an order of 4 and defining length of 5. This particular chromosome represents the set of chromosomes have a 0 or 1 in the leftmost bit, followed by a 10, then two wildcards and ends with a 01. The initial population corresponds to multiple schemata and over the course of applying the genetic operators, some survive while others survive. According to the schema theorem, schemata to low order, high fitness and short defining length reappear in future generations. For a better understanding, an analogy can be drawn between the schema and matching expressions using regular expersions in programming constructs.
+For eg, a chromosome '*10**01' will have an order of 4 and a defining length of 5. This particular chromosome represents the set of chromosomes that have a 0 or 1 in the leftmost bit, followed by a 10, then two wildcards and ends with a 01. The initial population corresponds to multiple schemata and over the course of applying the genetic operators, some survive while others survive. According to the schema theorem, schemata to low order, high fitness, and short defining length reappear in future generations. For a better understanding, an analogy can be drawn between the schema and matching expressions using regular expressions in programming constructs.
 
 
 \subsection{EC Critical Factor: Fitness Selection}
-The evolutionary algorithm depends greatly on the quality of the fitness function \cite{haram}. It forms the basis for the next generation. In CC, tailor-made fitness function might suffice for each problem. But for a self-organizing QC system, the main program would have to run multiple times to determine the fitness from each output. Even if a real quantum computer was used, we would get one output and it's associated probability from each epoch. The probability of error so obtained could then be utilized to function as a fitness function. The only drawback in this method would be the absense of a quantum computer and the result exponential computational resources. 
+The evolutionary algorithm depends greatly on the quality of the fitness function \cite{haram}. It forms the basis for the next generation. In CC, a tailor-made fitness function might suffice for each problem. But for a self-organizing QC system, the main program would have to run multiple times to determine the fitness from each output. Even if a real quantum computer was used, we would get one output and it's associated probability from each epoch. The probability of error so obtained could then be utilized to function as a fitness function. The only drawback in this method would be the absence of a quantum computer and the result of exponential computational resources. 
 
-The probability of error, in itself is inadequete to function as a fitness function for a QC system. This is due to the extreme ease with which a program could be produced with a 50\% best case accuracy that is no where close to the real output. As an analogy, construction of such a program to decide the circuit would be like tossing a coin to decide the next gate in the circuit. 
+The probability of error, in itself, is inadequate to function as a fitness function for a QC system. This is due to the extreme ease with which a program could be produced with a 50\% best-case accuracy that is nowhere close to the real output. As an analogy, the construction of such a program to decide the circuit would be like tossing a coin to decide the next gate in the circuit. 
 
 The function used in this paper is a combination of the probability of error and a count of the number of fitness cases for which the program produces better results in more than 50\% of the cases. Multiple calls can be made to the "Oracle" to minimize the number of gates in the circuit. Other quantum mechanical properties could also be utilized for improved fitness functions. 
 
@@ -553,7 +553,7 @@ The function used in this paper is a combination of the probability of error and
 \subsection{Experimental Setup}
 Due to the unavailability of a quantum computer, an artificial environment was created and simulations were conducted in it. The experiment was set up on a 64-bit Machine with Ubuntu 20.04, Intel® CoreTM i5-7200U CPU @ 2.50GHz × 4, with a GeForce 940MX/PCle/SSE2 graphic card. 
 
-In order to design a quantum state system, we provide the program with a set of input qubits mapped to set of ouput qubit. As discussed previously the fitness function is chosen as a lexicographic combination of the number of misses and probability of error as given in Equation $\ref{eq:5}$, where $\alpha$ is a scaling factor, $\textit{m}$ is number of misses and $\textit{e}$ is probability of error \cite{lex}. Lower the value returned by the fitness function, higher is the solution's quality.
+To design a quantum state system, we provide the program with a set of input qubits mapped to a set of output qubits. As discussed previously the fitness function is chosen as a lexicographic combination of the number of misses and probability of error as given in Equation $\ref{eq:5}$, where $\alpha$ is a scaling factor, $\textit{m}$ is the number of misses, and $\textit{e}$ is the probability of error \cite{lex}. The lower the value returned by the fitness function, the higher is the solution's quality.
 
 \begin{equation}
 \label{eq:5}
@@ -562,7 +562,7 @@ f = \alpha m + e
 
 
 \subsection{Results}
-Following this, an initial set of chromosomes corresponding to the ideal circuit were created and gently evolved for set number of generations. The generation progression is composed of the previously mentioned genetic operators. A global count of the best fitness achieved for far is mentioned and the matrix corresponding to that score is declared as the optimal circuit design \cite{cir}. The results have been composed for 100 generations in 10 test runs and displayed in Table $\ref{tab:3}$.  
+Following this, an initial set of chromosomes corresponding to the ideal circuit were created and gently evolved for a set number of generations. The generation progression is composed of the previously mentioned genetic operators. A global count of the best fitness achieved for far is mentioned and the matrix corresponding to that score is declared as the optimal circuit design \cite{cir}. The results have been composed for 100 generations in 10 test runs and displayed in Table $\ref{tab:3}$.  
 
 
 \begin{table*}[!t]
@@ -618,11 +618,11 @@ Experiment No. & Input Qubit & Output Qubit & Number of Chromosomes &  Best Fitn
 }
 \end{table*}
 
-As we can see, the results for test run 1, 5, 7 and 9 are extremely promising. Further fine tuning could be applied to narrow down the chromosome population. These results act as proof-of-concept when it comes to combing the field of computational intelligence with quantum mechanics. 
+As we can see, the results for test runs 1, 5, 7, and 9 are extremely promising. Further fine-tuning could be applied to narrow down the chromosome population. These results act as proof-of-concept when it comes to combing the field of computational intelligence with quantum mechanics. 
 
 \subsection{Conclusion and Future Scope}
 
-Applied automatic programming technologies with discovery of new quantum speedups in genetic programming systems are an extremely promising avenue and are worthy of serious investigation. Construction of large scale quantum computers can leverage the unprecedented computational powers offered by EQUATe and the results so listed, act as proof-of-concept. The main area of improvment for EQUATe would involve identifying and realizing the "embarrasingly parallel" EC methods and run them on accelerated high-performance computing clusters. Similarly parallelizing the QC component of EQUATe will result in a decreased memory footprint leading to optimal memory allocation and utilization.
+Applied automatic programming technologies with the discovery of new quantum speedups in genetic programming systems are an extremely promising avenue and are worthy of serious investigation. Construction of large scale quantum computers can leverage the unprecedented computational powers offered by EQUATe and the results so listed, act as a proof-of-concept. The main area of improvement for EQUATe would involve identifying and realizing the "embarrassingly parallel" EC methods and run them on accelerated high-performance computing clusters. Similarly parallelizing the QC component of EQUATe will result in a decreased memory footprint leading to optimal memory allocation and utilization.
 
 \begin{thebibliography}{00}
 
