@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  29 SEP 2020 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  30 SEP 2020 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,12 +333,12 @@ LaTeX Warning: No \author given.
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -347,59 +347,83 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <p1.png, id=1, 538.01pt x 1204.5pt>
 File: p1.png Graphic file (type png)
 <use p1.png>
-Package pdftex.def Info: p1.png  used on input line 95.
+Package pdftex.def Info: p1.png  used on input line 134.
 (pdftex.def)             Requested size: 85.7796pt x 192.05609pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<ss.jpg, id=16, 771.88374pt x 513.92pt>
+<ss.jpg, id=17, 771.88374pt x 513.92pt>
 File: ss.jpg Graphic file (type jpg)
 <use ss.jpg>
-Package pdftex.def Info: ss.jpg  used on input line 113.
+Package pdftex.def Info: ss.jpg  used on input line 157.
 (pdftex.def)             Requested size: 227.62204pt x 151.55019pt.
- [2 <./p1.png> <./ss.jpg>]
-Underfull \hbox (badness 5161) in paragraph at lines 216--217
+ [2 <./p1.png> <./ss.jpg>] [3]
+Underfull \hbox (badness 5161) in paragraph at lines 453--454
 []\OT1/ptm/m/n/10 Mutation: The se-lected so-lu-tions un-dergo ran-dom
  []
 
-<p2.png, id=26, 990.70125pt x 1204.5pt>
+<p2.png, id=34, 990.70125pt x 1204.5pt>
 File: p2.png Graphic file (type png)
 <use p2.png>
-Package pdftex.def Info: p2.png  used on input line 220.
+Package pdftex.def Info: p2.png  used on input line 457.
 (pdftex.def)             Requested size: 199.16928pt x 242.14551pt.
-[3 <./p2.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-42.
+
+Overfull \hbox (25.1593pt too wide) detected at line 516
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (4.19635pt too high) has occurred while \output is active []
+
+
+[4 <./p2.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
+58.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-[4]
-Underfull \hbox (badness 5622) in paragraph at lines 429--430
+[5]
+Underfull \hbox (badness 2837) in paragraph at lines 635--636
+\OT1/ptm/m/n/8 En-gi-neer-ing (CSDE), Mel-bourne, Aus-tralia, 2019, pp. 1-8, do
+i:
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 647--648
 \OT1/ptm/m/n/8 is-ters, gates and al-go-rithms," 2012 28th In-ter-na-tional Con
 -fer-
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 431--432
+Underfull \hbox (badness 1668) in paragraph at lines 649--650
 []\OT1/ptm/m/n/8 D. Jitkongchuen, P. Phaidang and P. Pongtaw-e-vi-rat, "Grey wo
 lf
  []
 
 
-Underfull \hbox (badness 3746) in paragraph at lines 431--432
+Underfull \hbox (badness 3746) in paragraph at lines 649--650
 \OT1/ptm/m/n/8 op-ti-miza-tion al-go-rithm with invasion-based mi-gra-tion op-e
 r-a-tion,"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--432
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
 \OT1/ptm/m/n/8 2016 IEEE/ACIS 15th In-ter-na-tional Con-fer-ence on Com-puter
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 431--432
+Underfull \hbox (badness 2591) in paragraph at lines 649--650
 \OT1/ptm/m/n/8 and In-for-ma-tion Sci-ence (ICIS), Okayama, 2016, pp. 1-5, doi:
+
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 657--658
+\OT1/ptm/m/n/8 ary Com-pu-ta-tion, vol. 19, no. 3, pp. 432-444, June 2015, doi:
 
  []
 
@@ -414,19 +438,19 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] [6] (./paper_nit.aux)
+[6] (./paper_nit.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5004 strings out of 481239
- 73776 string characters out of 5920378
- 342014 words of memory out of 5000000
- 20212 multiletter control sequences out of 15000+600000
+ 5006 strings out of 481239
+ 73792 string characters out of 5920378
+ 343028 words of memory out of 5000000
+ 20214 multiletter control sequences out of 15000+600000
  577375 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,20n,38p,1033b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,20n,38p,987b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-
@@ -435,22 +459,21 @@ onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper_nit.pdf (6 pages, 440699 bytes).
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper_nit.pdf (6 pages, 441927 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
