@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  30 SEP 2020 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.8)  30 SEP 2020 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,36 +379,36 @@ i:
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 641--642
+Underfull \hbox (badness 5622) in paragraph at lines 644--645
 \OT1/ptm/m/n/8 is-ters, gates and al-go-rithms," 2012 28th In-ter-na-tional Con
 -fer-
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 643--644
+Underfull \hbox (badness 1668) in paragraph at lines 646--647
 []\OT1/ptm/m/n/8 D. Jitkongchuen, P. Phaidang and P. Pongtaw-e-vi-rat, "Grey wo
 lf
  []
 
 
-Underfull \hbox (badness 3746) in paragraph at lines 643--644
+Underfull \hbox (badness 3746) in paragraph at lines 646--647
 \OT1/ptm/m/n/8 op-ti-miza-tion al-go-rithm with invasion-based mi-gra-tion op-e
 r-a-tion,"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--644
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 \OT1/ptm/m/n/8 2016 IEEE/ACIS 15th In-ter-na-tional Con-fer-ence on Com-puter
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 643--644
+Underfull \hbox (badness 2591) in paragraph at lines 646--647
 \OT1/ptm/m/n/8 and In-for-ma-tion Sci-ence (ICIS), Okayama, 2016, pp. 1-5, doi:
 
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 651--652
+Underfull \hbox (badness 1533) in paragraph at lines 654--655
 \OT1/ptm/m/n/8 ary Com-pu-ta-tion, vol. 19, no. 3, pp. 432-444, June 2015, doi:
 
  []
@@ -426,10 +426,10 @@ Before submitting the final camera ready copy, remember to:
 
 [6] (./paper_nit.aux) ) 
 Here is how much of TeX's memory you used:
- 5006 strings out of 481239
- 73793 string characters out of 5920378
- 343997 words of memory out of 5000000
- 20215 multiletter control sequences out of 15000+600000
+ 5007 strings out of 481239
+ 73801 string characters out of 5920378
+ 344001 words of memory out of 5000000
+ 20216 multiletter control sequences out of 15000+600000
  576297 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,20n,38p,1069b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -451,7 +451,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
 dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on paper_nit.pdf (6 pages, 425695 bytes).
+Output written on paper_nit.pdf (6 pages, 425889 bytes).
 PDF statistics:
  102 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

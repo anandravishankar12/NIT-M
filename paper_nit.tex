@@ -88,7 +88,7 @@ where $f\textsubscript{i}(x)$ is the $i\textsuperscript{th}$ sub-problem subject
 
 Such a mapping is considered to be optimal if none of the individual components can be improved without degradation of at least one other component and such a solution vector is called a Pareto optimal solution \cite{pare}. An ideal objective vector $z\textsuperscript{*}$ can be obtained by minimizing every objective function individually subject to $S$. A vector strictly better than $z\textsuperscript{*}$ is called a utopian objective vector $z\textsuperscript{**}$. Similarly, the upper bounds of the Pareto Optimal set to constitute a nadir objective vector $z\textsuperscript{nad}$. Once the variables are decided, we can embark upon finding a solution to the optimization problem. Various techniques can be chosen to solve the problem. The most popular ones are described in the next section. 
 
-\section{Computing Methologies}
+\section{Computing Methology}
 
 Once the problem statement is defined and the model is formulated, a computing technique must be selected for solving the MOOP. Historically, three main verticals have stood out as prime candidates for solving MOOPs. They been described in Table $\ref{tab:1}$. 
 
@@ -135,7 +135,7 @@ Evolutionary Algorithms (EA) \cite{vik} encompass a wide array of research ideas
 \label{p1}
 \end{figure}
 
-\subsection{A Novel Ensemble}
+\subsection{EQUATe: A Novel Ensemble}
 As we have seen, each vertical offers it's own advantages and disadvantages when it comes to solving an optimization problem. A trade-off exists between CC and QC when it comes to delivering quality results in a reduced time frame and availability of resources to implement the search process. Meanwhile, EC offers a multi-pronged approach to the search process by applying certain constraints and operators which results in the emergence of the best results with a decreased time complexity. EQUATe borrows the most promising concepts from QC and EC to provide a new front to solving optimization problems. The space-saving capabilities offered by QC are excellent additions to EQUATe. Likewise, the evolutionary model offered by EC boosts the search process. The general MOOP is a relatively broad set of problems, with each problem requiring certain tweaks to the solution search process. In this paper, we narrow down the MOOPs to a specific case i.e, Design a circuit to achieve state $j$ from $i$ with multiple cost considerations. 
 % \subsection{Computing Methodologies}
 % 
@@ -265,9 +265,9 @@ As we have seen, each vertical offers it's own advantages and disadvantages when
 % \label{p3}
 % \end{figure}
 
-\section{Evolved Quantum Computing}
+\section{Evolutionary Quantum Transition (EQUATe)}
 
-Evolved self-organizing computer programs \cite{self} utilize the techniques described in the previous section to solve problems. In this paper the following general problem structure is considered for demonstrating the capabilities of EQUATe; How to design a circuit to travel from state $\textit{A}$ to state $\textit{B}$? These problem types are called "Oracle Analysis" as they require we to determine some property of a valid quantum gate with no prior information on the intermediate states and what combination of gates results in what output. Some of the key terminologies used in the following texts are explained in Table $\ref{tab:2}$
+Evolved self-organizing computer programs \cite{self} utilize the techniques described in the previous section to solve problems. In this paper the following general problem structure is considered for demonstrating the capabilities of EQUATe; How to design a circuit to travel from state $\textit{A}$ to state $\textit{B}$? These problem types are called "Oracle Analysis" \cite{oracle} as they require we to determine some property of a valid quantum gate with no prior information on the intermediate states and what combination of gates results in what output. Some of the key terminologies used in the following texts are explained in Table $\ref{tab:2}$
 
 
 
@@ -305,7 +305,7 @@ $q\textsubscript{k}$ & Output mapped to Hilbert space\\
 \subsection{Conventional Approach}
 The conventional process would involve a declaration of a register of size $\textit{n}$ and listing out all possible combinations for reaching state $\textit{x\textsubscript{j}}$ along with the costs. This would be followed by the creation of a logical circuitry of gates mapping the input state to the output state using boolean primitives. The entire process could still be automated using certain advanced algorithms. However, the memory utilization will not be optimal as all possible state transitions must be considered before building the circuit. Figure $\ref{p2}$ displays the state table, state diagram, and accompanying circuit diagram for a D flip flop. Notice that all possible states for the input have been mentioned in the state table. This constitutes a huge waste of memory as the majority of the inputs are never encountered and some states could be invalid. QC aims to reduce this inefficiency between making all the states dependent on each other.
 
-\subsection{EQUATe Approach}
+\subsection{The EQUATe Approach}
 
 The conventional approach is extremely inefficient and arduous. EQUATe offers an elegant solution by utilizing the best of both worlds. 
 
@@ -637,6 +637,9 @@ Applied automatic programming technologies with the discovery of new quantum spe
 \bibitem{vik} P. A. Vikhar, "Evolutionary algorithms: A critical review and its future prospects," 2016 International Conference on Global Trends in Signal Processing, Information Computing and Communication (ICGTSPICC), Jalgaon, 2016, pp. 261-265, doi: 10.1109/ICGTSPICC.2016.7955308.
 
 \bibitem{self} H-G. Beyer and K. Deb, "On self-adaptive features in real-parameter evolutionary algorithms," in IEEE Transactions on Evolutionary Computation, vol. 5, no. 3, pp. 250-270, June 2001, doi: 10.1109/4235.930314.
+
+
+\bibitem{oracle} J. Chen et al., "Supporting oracle construction via static analysis," 2016 31st IEEE/ACM International Conference on Automated Software Engineering (ASE), Singapore, 2016, pp. 178-189.
 
 \bibitem{qg} P. I. Hagouel and I. G. Karafyllidis, "Quantum computers: Registers, gates and algorithms," 2012 28th International Conference on Microelectronics Proceedings, Nis, 2012, pp. 15-21, doi: 10.1109/MIEL.2012.6222789.
 
